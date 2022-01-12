@@ -23,7 +23,7 @@ const removeContact = async (contactId) => {
   if (idx === -1) {
       throw new NotFound();
     }
-  const remove = contacts.splice(idx, 1);
+    contacts.splice(idx, 1);
     await fs.writeFile(contactsPath, JSON.stringify(contacts, null, 2));
     
     return {message: "contact deleted"}
